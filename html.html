@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIWORK - Conectando o Futuro</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="background-image"></div> <header>
+        <img src="logo_uniwork.png" alt="Logo UNIWORK" class="logo-img">
+        <p class="header-slogan"><strong>A Plataforma de Conexão e Carreira para a Comunidade Uninove.</strong></p>
+    </header>
+    
+    <div class="container">
+        
+        <section class="section-intro accordion-container">
+
+            <div class="accordion-item">
+                <button class="accordion-header" data-target="conceito">
+                    <h2><i class="fas fa-handshake"></i> Quem Somos e Qual o Conceito do UNIWORK?</h2>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div id="conceito" class="accordion-content"> 
+                    <p>O<strong>UNIWORK é a sua plataforma essencial para transformar a jornada acadêmica em sucesso profissional.</strong> Nascemos para ser o ponto de partida seguro onde cada estudante da Uninove pencontra não só o primeiro estágio, mas o acesso direto ao networking que define uma carreira promissora.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" data-target="missao">
+                    <h2><i class="fas fa-gem"></i> Nossa Missão</h2> 
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div id="missao" class="accordion-content">
+                    <p><strong>Ser o pilar de lançamento da carreira do estudante Uninove.</strong> Nossa missão é eliminar as barreiras do primeiro estágio, fornecendo o apoio fundamental para que, através de conexões direcionadas e ferramentas exclusivas, ele inicie sua trajetória profissional com sucesso imediato.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" data-target="beneficios">
+                    <h2><i class="fas fa-award"></i> Benefícios de Fazer Parte</h2>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div id="beneficios" class="accordion-content">
+                    <p>Ao se juntar à rede UNIWORK, você terá acesso a recursos exclusivos que impulsionarão sua jornada profissional e acadêmica:</p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-briefcase"></i> 
+                            <strong>Vagas de acordo com seu perfil</strong> 
+                            <span>Oportunidades de estágio e emprego filtradas especificamente para o seu perfil.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-network-wired"></i> 
+                            <strong>Networking Estratégico</strong> 
+                            <span>Conexão direta com outros estudantes, egressos bem-sucedidos e empresas parceiras.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-chalkboard-teacher"></i> 
+                            <strong>Eventos e Cursos</strong> 
+                            <span>Convites prioritários para workshops, mentorias e palestras focadas em desenvolvimento de carreira.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-check"></i> 
+                            <strong>Perfil Profissional Aprimorado</strong> 
+                            <span>Ferramentas para construir um currículo digital atraente para os recrutadores.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" data-target="parceiros">
+                    <h2><i class="fas fa-building"></i> Empresas Parceiras</h2>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div id="parceiros" class="accordion-content">
+                    <p>Selecionamos as empresas líderes que buscam o talento exato da Uninove. Esqueça o filtro: <strong>seu currículo vai direto para quem decide nas grandes corporações.</strong> Seu acesso exclusivo às melhores vagas é garantido pelo UNIWORK.</p>
+                    
+                    <div class="logos-parceiros">
+                        <div class="logo-placeholder">
+                            <img src="spotify.png" alt="Logo Spotify">
+                        </div>
+                        <div class="logo-placeholder">
+                            <img src="microsoft.png" alt="Logo Microsoft">
+                        </div>
+                        <div class="logo-placeholder">
+                            <img src="apple.png" alt="Logo Apple">
+                        </div>
+                        <div class="logo-placeholder">
+                            <img src="amazon.png" alt="Logo Amazon">
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            
+        </section>
+
+        <section class="section-registro">
+            <h2><i class="fas fa-user-plus"></i> Faça Parte da Nossa Rede</h2>
+            
+            <form id="registroForm" action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo<span class="required-asterisk">*</span></label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome e sobrenome">
+                </div>
+
+                <div class="form-group">
+                    <label for="ra">Registro Acadêmico (RA)<span class="required-asterisk">*</span></label>
+                    <input 
+                        type="text" 
+                        id="ra" 
+                        name="ra" 
+                        required 
+                        placeholder="Ex: 322102055"
+                        pattern="\d*" 
+                        inputmode="numeric" 
+                        title="Apenas números são permitidos para o RA."
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="data_nascimento">Data de Nascimento<span class="required-asterisk">*</span></label>
+                    <input 
+                        type="text" 
+                        id="data_nascimento" 
+                        name="data_nascimento" 
+                        required
+                        placeholder="DD/MM/AAAA"
+                        pattern="\d{2}/\d{2}/\d{4}" 
+                        title="Formato: Dia/Mês/Ano (DD/MM/AAAA)"
+                        maxlength="10" 
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">Telefone<span class="required-asterisk">*</span></label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 98888-8888" required maxlength="15">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail<span class="required-asterisk">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="semestre_atual">Curso<span class="required-asterisk">*</span></label>
+                    <select id="semestre_atual" name="semestre_atual" required>
+                        <option value="" disabled selected>Selecione seu curso...</option>
+                        <option value="1">Ciência da Computação</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="semestre_atual">Semestre Atual<span class="required-asterisk">*</span></label>
+                    <select id="semestre_atual" name="semestre_atual" required>
+                        <option value="" disabled selected>Selecione seu semestre...</option>
+                        <option value="1">1º Semestre</option>
+                        <option value="2">2º Semestre</option>
+                        <option value="3">3º Semestre</option>
+                        <option value="4">4º Semestre</option>
+                        <option value="5">5º Semestre</option>
+                        <option value="6">6º Semestre</option>
+                        <option value="7">7º Semestre</option>
+                        <option value="8">8º Semestre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area_atuacao">Em qual área em que está buscando um estágio?<span class="required-asterisk">*</span></label>
+                    <select id="area_atuacao" name="area_atuacao" required>
+                        <option value="" disabled selected>Selecione área...</option>
+                        <option value="desenvolvimento_web">Desenvolvimento Web (Front-end / Back-end)</option>
+                        <option value="analise_dados">Análise e Ciência de Dados</option>
+                        <option value="seguranca_info">Segurança da Informação / Cybersecurity</option>
+                        <option value="engenharia_software">Engenharia de Software</option>
+                        <option value="computacao_nuvem">Computação em Nuvem (Cloud Computing)</option>
+                        <option value="redes_sistemas">Redes e Sistemas Operacionais</option>
+                        <option value="inteligencia_artificial">Inteligência Artificial (IA) / Machine Learning (ML)</option>
+                        <option value="jogos">Desenvolvimento de Jogos</option>
+                        <option value="outras_ti">Outras Áreas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="curriculo">Anexar Currículo (Opcional)</label>
+                    <input type="file" id="curriculo" name="curriculo" accept=".pdf,.doc,.docx" class="input-file">
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentários (Opcional)</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" maxlength="300" placeholder="Observações até 300 caracteres"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Registrar Agora</button>
+
+            </form>
+
+            <div id="mensagemSucesso" style="display: none; text-align: center; padding: 40px; border: 2px solid var(--azul-acao); border-radius: 8px;">
+                </div>
+
+        </section>
+
+    </div>
+
+    <script>
+        // 1. Script para auto-formatar a Data de Nascimento
+        document.getElementById('data_nascimento').addEventListener('input', function(e) {
+            let input = e.target.value;
+            input = input.replace(/\D/g, ""); 
+            let formattedInput = '';
+
+            if (input.length > 0) {
+                formattedInput = input.substring(0, 2);
+            }
+            if (input.length >= 3) {
+                formattedInput += '/' + input.substring(2, 4);
+            }
+            if (input.length >= 5) {
+                formattedInput += '/' + input.substring(4, 8);
+            }
+            
+            e.target.value = formattedInput;
+        });
+
+        // 2. Script para manipular o envio do formulário e mostrar a mensagem
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const form = document.getElementById('registroForm');
+            const mensagem = document.getElementById('mensagemSucesso');
+            const emailCadastrado = document.getElementById('email').value;
+            const telefoneCadastrado = document.getElementById('telefone').value;
+
+            form.style.display = 'none';
+
+            // CONTEÚDO DA MENSAGEM DE SUCESSO
+            mensagem.innerHTML = `
+                <h3 style="color: var(--azul-principal);">✅ Cadastro Finalizado com Sucesso!</h3>
+                <p>Você receberá as melhores oportunidades de estágio e emprego nos contatos cadastrados!</p>
+                <ul style="list-style-type: none; padding: 0; margin: 15px auto; width: fit-content; text-align: left;">
+                    <li style="margin-bottom: 5px;">📧 Via <strong>E-mail</strong> (${emailCadastrado})</li>
+                    <li style="margin-bottom: 5px;">📱 Via <strong>WhatsApp</strong> (${telefoneCadastrado})</li>
+                    <li style="margin-bottom: 5px;">💻 Via <strong>Central do Aluno</strong> Uninove</li>
+                </ul>
+                <p style="margin-top: 20px;">Fique de olho em sua caixa de entrada sua jornada de carreira pode começar a qualquer momento!</p>
+                
+                <button id="btnLogin" class="btn-submit" style="background-color: var(--azul-principal); width: auto; margin: 20px auto 0 auto;">
+                    Acessar Central do Aluno
+                </button>
+            `;
+            
+            const btnLogin = document.getElementById('btnLogin');
+            btnLogin.style.display = 'block'; 
+
+            // REDIRECIONAMENTO PARA CENTRAL DO ALUNO
+            btnLogin.onclick = function() {
+                window.location.href = 'https://aluno.uninove.br/seu/CENTRAL/aluno/central.php';
+            };
+
+            mensagem.style.display = 'block';
+        });
+
+        // 3. Script para os Cards Colapsáveis (Accordion) - Comportamento Sanfona
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.accordion-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const contentId = this.getAttribute('data-target');
+                    const content = document.getElementById(contentId);
+                    
+                    this.classList.toggle('active');
+                    content.classList.toggle('open');
+                    
+                    // Comportamento de Sanfona: Fechar outros cards ao abrir um novo
+                    headers.forEach(otherHeader => {
+                        if (otherHeader !== this && otherHeader.classList.contains('active')) {
+                            otherHeader.classList.remove('active');
+                            const otherContentId = otherHeader.getAttribute('data-target');
+                            document.getElementById(otherContentId).classList.remove('open');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // 4. Script para auto-formatar o Telefone (DD) XXXXX-XXXX
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let input = e.target.value;
+            input = input.replace(/\D/g, ""); 
+            let formattedInput = '';
+
+            if (input.length > 0) {
+                formattedInput += '(' + input.substring(0, 2);
+            }
+            if (input.length > 2) {
+                formattedInput += ') ' + input.substring(2, 7);
+            }
+            if (input.length > 7) {
+                formattedInput += '-' + input.substring(7, 11);
+            }
+            
+            e.target.value = formattedInput;
+            
+            if (formattedInput.length > 15) {
+                e.target.value = formattedInput.substring(0, 15);
+            }
+        });
+        
+        // 5. Script para garantir que o RA seja apenas numérico
+        document.getElementById('ra').addEventListener('input', function(e) {
+            let input = e.target.value;
+            e.target.value = input.replace(/\D/g, ""); 
+        });
+    </script>
+
+</body>
+</html>
