@@ -208,7 +208,7 @@
     </div>
 
     <script>
-        // 1. Script para auto-formatar a Data de Nascimento
+
         document.getElementById('data_nascimento').addEventListener('input', function(e) {
             let input = e.target.value;
             input = input.replace(/\D/g, ""); 
@@ -227,7 +227,7 @@
             e.target.value = formattedInput;
         });
 
-        // 2. Script para manipular o envio do formulário e mostrar a mensagem
+
         document.getElementById('registroForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
 
@@ -238,7 +238,6 @@
 
             form.style.display = 'none';
 
-            // CONTEÚDO DA MENSAGEM DE SUCESSO
             mensagem.innerHTML = `
                 <h3 style="color: var(--azul-principal);">✅ Cadastro Finalizado com Sucesso!</h3>
                 <p>Você receberá as melhores oportunidades de estágio e emprego nos contatos cadastrados!</p>
@@ -257,15 +256,14 @@
             const btnLogin = document.getElementById('btnLogin');
             btnLogin.style.display = 'block'; 
 
-            // REDIRECIONAMENTO PARA CENTRAL DO ALUNO
-            btnLogin.onclick = function() {
+               btnLogin.onclick = function() {
                 window.location.href = 'https://aluno.uninove.br/seu/CENTRAL/aluno/central.php';
             };
 
             mensagem.style.display = 'block';
         });
 
-        // 3. Script para os Cards Colapsáveis (Accordion) - Comportamento Sanfona
+
         document.addEventListener('DOMContentLoaded', function() {
             const headers = document.querySelectorAll('.accordion-header');
 
@@ -277,7 +275,7 @@
                     this.classList.toggle('active');
                     content.classList.toggle('open');
                     
-                    // Comportamento de Sanfona: Fechar outros cards ao abrir um novo
+                 
                     headers.forEach(otherHeader => {
                         if (otherHeader !== this && otherHeader.classList.contains('active')) {
                             otherHeader.classList.remove('active');
@@ -289,7 +287,7 @@
             });
         });
         
-        // 4. Script para auto-formatar o Telefone (DD) XXXXX-XXXX
+       
         document.getElementById('telefone').addEventListener('input', function(e) {
             let input = e.target.value;
             input = input.replace(/\D/g, ""); 
@@ -312,7 +310,7 @@
             }
         });
         
-        // 5. Script para garantir que o RA seja apenas numérico
+       
         document.getElementById('ra').addEventListener('input', function(e) {
             let input = e.target.value;
             e.target.value = input.replace(/\D/g, ""); 
@@ -321,4 +319,5 @@
 
 </body>
 </html>
+
 
