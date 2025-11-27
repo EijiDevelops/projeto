@@ -149,7 +149,7 @@
 
                 <div class="form-group">
                     <label for="semestre_atual">Curso<span class="required-asterisk">*</span></label>
-                    <select id="semestre_atual" name="semestre_atual" required>
+                    <select id="curso" name="curso" required>
                         <option value="" disabled selected>Selecione...</option>
                         <option value="1">Ciência da Computação</option>
                     </select>
@@ -211,9 +211,39 @@
 
         document.getElementById('data_nascimento').addEventListener('input', function(e) {
             let input = e.target.value;
-            input = input.replace(/\D/g, ""); 
+            input = input.replace(/\D/g, "");
             let formattedInput = '';
 
+            let dia = input.substring(0, 2);
+            let mes = input.substring(2, 4);
+            let ano = input.substring(4, 8);
+
+            
+            if (input.length === 1 && parseInt(dia, 10) > 3) {
+                dia = '0' + dia.substring(0, 1);
+                input = dia + input.substring(1);
+            } else if (input.length === 3 && parseInt(mes.substring(0, 1), 10) > 1) {
+                mes = '0' + mes.substring(0, 1);
+                input = dia + mes + input.substring(3);
+            }
+
+            let diaNum = parseInt(dia, 10);
+            let mesNum = parseInt(mes, 10);
+
+            if (dia.length === 2 && diaNum > 31) {
+                alert('Dia inválido. O dia máximo é 31.');
+                input = input.substring(0, 1);
+                e.target.value = input;
+                return;
+            }
+            if (mes.length === 2 && mesNum > 12) {
+                alert('Mês inválido. O mês máximo é 12.');
+                input = dia + mes.substring(0, 1);
+                e.target.value = formattedInput;
+                return;
+            }
+            
+            
             if (input.length > 0) {
                 formattedInput = input.substring(0, 2);
             }
@@ -231,6 +261,21 @@
         document.getElementById('registroForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
 
+            const dataNascimentoInput = document.getElementById('data_nascimento').value;
+            
+            if (dataNascimentoInput.length !== 10) {
+                alert('Por favor, preencha a data de nascimento no formato DD/MM/AAAA.');
+                return;
+            }
+
+            const dia = parseInt(dataNascimentoInput.substring(0, 2), 10);
+            const mes = parseInt(dataNascimentoInput.substring(3, 5), 10);
+            
+            if (dia === 0 || dia > 31 || mes === 0 || mes > 12) {
+                alert('A data de nascimento está inválida. Verifique o dia (máx. 31) e o mês (máx. 12).');
+                return;
+            }
+            
             const form = document.getElementById('registroForm');
             const mensagem = document.getElementById('mensagemSucesso');
             const emailCadastrado = document.getElementById('email').value;
@@ -256,7 +301,7 @@
             const btnLogin = document.getElementById('btnLogin');
             btnLogin.style.display = 'block'; 
 
-               btnLogin.onclick = function() {
+                btnLogin.onclick = function() {
                 window.location.href = 'https://aluno.uninove.br/seu/CENTRAL/aluno/central.php';
             };
 
@@ -275,7 +320,8 @@
                     this.classList.toggle('active');
                     content.classList.toggle('open');
                     
-                 
+                    
+                    
                     headers.forEach(otherHeader => {
                         if (otherHeader !== this && otherHeader.classList.contains('active')) {
                             otherHeader.classList.remove('active');
@@ -287,10 +333,10 @@
             });
         });
         
-       
+        
         document.getElementById('telefone').addEventListener('input', function(e) {
             let input = e.target.value;
-            input = input.replace(/\D/g, ""); 
+            input = input.replace(/\D/g, "");
             let formattedInput = '';
 
             if (input.length > 0) {
@@ -310,21 +356,12 @@
             }
         });
         
-       
+        
         document.getElementById('ra').addEventListener('input', function(e) {
             let input = e.target.value;
-            e.target.value = input.replace(/\D/g, ""); 
+            e.target.value = input.replace(/\D/g, "");
         });
     </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
